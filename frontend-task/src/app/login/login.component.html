@@ -1,0 +1,43 @@
+<div class="container">
+  <!-- Animated shapes on the left side -->
+  <div class="shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <!-- Login Card -->
+  <mat-card class="login-card">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" [(ngModel)]="username" name="username">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        
+
+        <div class="button">
+          <button mat-raised-button color="primary" type="submit">Login</button>
+        </div>
+      </form>
+
+      <p>Don't have an account? 
+        <a (click)="goToRegister()" class="register-link">Register</a>
+      </p>
+
+      <!-- Error message -->
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

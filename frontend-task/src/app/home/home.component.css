@@ -1,0 +1,97 @@
+/* Container with gradient background */
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Centered welcome card */
+.welcome-card {
+  width: 500px;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1; /* Make sure the card stays above the shapes */
+}
+
+/* Logout button positioned at the top-right */
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1; /* Make sure the button stays above the shapes */
+}
+
+/* Mat-card title styling */
+mat-card-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Shapes for both left and right sides */
+.shapes-left, .shapes-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Left side shapes */
+.shapes-left {
+  left: 0;
+}
+
+.shape {
+  width: 150px;
+  height: 150px;
+  background-color: #1976d2;
+  opacity: 0.7;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  position: absolute;
+}
+
+/* Left side shapes specific positioning */
+.shape:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+  top: 60%;
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.shape:nth-child(3) {
+  top: 40%;
+  left: 50%;
+  animation-delay: 4s;
+}
+
+/* Right side shapes (mirror of left side) */
+.shapes-right {
+  right: 0;
+  transform: scaleX(-1); /* Flip the shapes horizontally to create a mirror effect */
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

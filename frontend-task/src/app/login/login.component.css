@@ -1,0 +1,105 @@
+/* Container now has a gradient background */
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+/* Restore the login card look */
+.login-card {
+  width: 500px;
+  padding: 40px;
+  margin-right: 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Adding margin to title */
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+
+.shapes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.shape {
+  width: 150px;
+  height: 150px;
+  background-color: #1976d2;
+  opacity: 0.7;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  position: absolute;
+}
+
+.shape:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+  left: 30%;
+  top: 60%;
+  animation-delay: 2s;
+}
+
+.shape:nth-child(3) {
+  left: 50%;
+  top: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Button styling */
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Form field genişliklerini eşitle */
+mat-form-field {
+  width: 70%;
+}
+
+/* Register link styling */
+.register-link {
+  font-weight: bold;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  color: #0d47a1;
+}
